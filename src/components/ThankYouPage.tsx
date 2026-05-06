@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 interface ThankYouPageProps {
   onContinue: () => void;
@@ -16,8 +15,6 @@ export const ThankYouPage: React.FC<ThankYouPageProps> = ({
   inline = false,
   final = false
 }) => {
-  const navigate = useNavigate();
-
   // Versión final con imagen de fondo pantalla completa
   if (final) {
     return (
