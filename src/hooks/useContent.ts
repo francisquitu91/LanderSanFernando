@@ -3,11 +3,10 @@ import { NavigationItem, HeroContent } from '../types';
 
 // Datos mock para desarrollo (simula respuesta de Supabase)
 const mockNavigationItems: NavigationItem[] = [
-  { id: 1, label: 'Inicio', path: '/', isActive: true },
-  { id: 2, label: 'Nosotros', path: '/nosotros', isActive: false },
-  { id: 3, label: 'Modelo Pedagógico', path: '/modelo-pedagogico', isActive: false },
-  { id: 4, label: 'Novedades', path: '/novedades', isActive: false },
-  { id: 5, label: 'Intranet', path: '/intranet', isActive: false },
+  { id: 1, label: 'Inicio', path: '#inicio', isActive: true },
+  { id: 2, label: 'Características', path: '#features', isActive: false },
+  { id: 3, label: 'Tipologías', path: '#plantas', isActive: false },
+  { id: 4, label: 'Ubicación', path: '#ubicacion', isActive: false },
 ];
 
 const mockHeroContent: HeroContent = {

@@ -76,87 +76,67 @@ export const FundacionSection: React.FC = () => {
       </div>
 
       {/* Contenido principal */}
-      <div className="relative max-w-7xl mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-8 z-10">
-        {/* Contenido de texto */}
-        <div className="flex-1 min-w-[280px]">
-          <div className="flex items-center gap-3 text-[#DD5D14] font-semibold mb-3">
-            <span className="w-8 h-[3px] bg-[#DD5D14] rounded-sm"></span> Fundación Pentecostés
-          </div>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
-            Pedagogía kentenijiana en comunidades educativas de excelencia
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-8 z-10">
+        {/* Título */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
+            El Proyecto
           </h2>
-          <p className="text-gray-600 mb-6 leading-relaxed max-w-2xl">
-            La Fundación Pentecostés plasma el sello de la pedagogía kentenijiana en cada comunidad educativa
-            de la Red, aspirando ser un apoyo al desarrollo de colegios que alcancen una educación orgánica de calidad.
-            Fundamentada en la espiritualidad del P. José Kentenich, promovemos una gestión de excelencia que sirve
-            desinteresadamente a la singularidad de cada persona.
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Solo 20 exclusivos departamentos, ubicados en un privilegiado sector de Concón, todos con vista al mar.
           </p>
-          <a 
-            className="inline-block bg-[#DD5D14] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#c54f10] transition-all hover:translate-x-1" 
-            href="#"
-          >
-            Ver Más →
-          </a>
         </div>
 
-        {/* Imagen con efectos */}
-        <div className="relative">
-          <div 
-            className="absolute -right-5 -top-5 w-44 h-44 rounded-2xl opacity-95 transition-transform duration-150"
-            style={{ 
-              background: 'linear-gradient(135deg, rgba(139,156,200,0.15), rgba(200,190,230,0.25))',
-              transform: `translate(${parallaxOffset * 0.15}px, ${-parallaxOffset * 0.1}px)`
-            }}
-          />
-          <div className="relative w-[340px] h-[340px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] z-10">
-            <img 
-              src="https://schoenstatt-fathers.org/es_new/wp-content/uploads/2021/04/0-CoverPK.jpg.pagespeed.ce.jmBv3pg7cb.jpg" 
-              alt="P. José Kentenich" 
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-              loading="lazy" 
-            />
+        {/* Galería de fotos */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+          {/* Foto principal - Izquierda */}
+          <div className="lg:col-span-1 lg:row-span-2">
+            <div className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <img 
+                src="https://i.postimg.cc/q7CVC1S3/Fachada1.jpg" 
+                alt="Fachada principal - El Proyecto" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+              />
+            </div>
           </div>
-          <div 
-            className="absolute right-1/2 -bottom-4 w-16 h-16 rounded-xl opacity-95 transition-transform duration-150"
-            style={{ 
-              background: 'linear-gradient(180deg, rgba(221,93,20,0.15), rgba(255,180,140,0.09))',
-              transform: `translate(${-parallaxOffset * 0.2}px, ${parallaxOffset * 0.12}px)`
-            }}
-          />
-        </div>
-      </div>
 
-      {/* Carrusel de Logos */}
-      <div className="relative mt-20 pt-12 border-t border-gray-200/50 z-10">
-        <h3 className="text-center text-gray-500 text-sm font-medium uppercase tracking-wider mb-8">
-          Red de Colegios
-        </h3>
-        
-        <div className="logo-carousel-container">
-          <div className="logo-carousel">
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/mtn-chile.png" alt="MTN Chile" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/ccst.png" alt="CCST" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/ccampanario.png" alt="Campanario" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/sagrada-familia.png" alt="Sagrada Familia" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/mtn-ecuador.png" alt="MTN Ecuador" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/san-jose.png" alt="San José" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/santa-maria-pt.png" alt="Santa María" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/jose-kentenich.png" alt="José Kentenich" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/csanmarc.png" alt="San Marcos" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/cmonte-tabor.png" alt="Monte Tabor" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/monte-reina.png" alt="Monte Reina" className="logo-item" />
-            
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/mtn-chile.png" alt="MTN Chile" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/ccst.png" alt="CCST" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/ccampanario.png" alt="Campanario" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/sagrada-familia.png" alt="Sagrada Familia" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/mtn-ecuador.png" alt="MTN Ecuador" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/san-jose.png" alt="San José" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/santa-maria-pt.png" alt="Santa María" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/jose-kentenich.png" alt="José Kentenich" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/csanmarc.png" alt="San Marcos" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/cmonte-tabor.png" alt="Monte Tabor" className="logo-item" />
-            <img src="https://www.pentecostes.cl/website/www.pentecostes.cl/cloud/logos/monte-reina.png" alt="Monte Reina" className="logo-item" />
+          {/* Galería de 4 fotos - Derecha */}
+          <div className="lg:col-span-2 grid grid-cols-2 gap-4">
+            {/* Foto 1 */}
+            <div className="relative h-[210px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img 
+                src="https://i.postimg.cc/63LPdghk/Fachada2.jpg" 
+                alt="Fachada - El Proyecto" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+              />
+            </div>
+
+            {/* Foto 2 */}
+            <div className="relative h-[210px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img 
+                src="https://i.postimg.cc/J4d2cbbb/Imagen-Edificio.jpg" 
+                alt="Edificio - El Proyecto" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+              />
+            </div>
+
+            {/* Foto 3 */}
+            <div className="relative h-[210px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img 
+                src="https://i.postimg.cc/43p2gqjK/Interior1.png" 
+                alt="Interior - El Proyecto" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+              />
+            </div>
+
+            {/* Foto 4 */}
+            <div className="relative h-[210px] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img 
+                src="https://i.postimg.cc/PfS3TmVz/Interior2.png" 
+                alt="Interior - El Proyecto" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -168,19 +148,16 @@ export const FundacionSection: React.FC = () => {
 export const VideoParallaxSection: React.FC = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Video de fondo con efecto parallax usando clip */}
+      {/* Imagen de fondo con efecto parallax */}
       <div 
         className="absolute inset-0 w-full h-full"
         style={{ 
           clipPath: 'inset(0 0 0 0)',
         }}
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <img
+          src="https://i.postimg.cc/FsmLWqxY/image.png"
+          alt="Parallax Section"
           className="w-full h-full object-cover"
           style={{
             position: 'fixed',
@@ -189,9 +166,7 @@ export const VideoParallaxSection: React.FC = () => {
             width: '100%',
             height: '100vh',
           }}
-        >
-          <source src="/assets/113343-697717990.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
       
       {/* Overlay oscuro */}

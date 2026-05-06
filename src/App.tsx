@@ -1,8 +1,10 @@
 import React from 'react';
-import { Navbar, HeroSection, FundacionSection, VideoParallaxSection, EditorialSection, ContactSection, VideoParallaxSection2, TeamSection } from './components';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navbar, HeroSection, VideoParallaxSection, FeaturesSection, EditorialSection, ContactSection, PlantasSection, LocationSection } from './components';
 import { useContent } from './hooks/useContent';
+import ThanksYouPageFull from './pages/ThanksYouPage';
 
-const App: React.FC = () => {
+const HomePage: React.FC = () => {
   const { navigation, hero, error } = useContent();
 
   if (error) {
@@ -21,27 +23,38 @@ const App: React.FC = () => {
       {/* Navbar */}
       <Navbar items={navigation} />
 
-      {/* Hero Section */}
+      {/* Inicio - Hero Section */}
       {hero && <HeroSection content={hero} />}
 
-      {/* Sección Fundación Pentecostés con efecto parallax interactivo */}
-      <FundacionSection />
-
-      {/* Sección de Video Parallax (igual que portada) */}
-      <VideoParallaxSection />
-
-      {/* Sección Editorial con bloques */}
+      {/* El Proyecto */}
       <EditorialSection />
 
-      {/* Segunda sección de Video Parallax (transición al equipo) */}
-      <VideoParallaxSection2 />
+      {/* Parallax */}
+      <VideoParallaxSection />
 
-      {/* Sección del Equipo */}
-      <TeamSection />
+      {/* Características */}
+      <FeaturesSection />
 
-      {/* Sección de Contacto */}
+      {/* Tipologías */}
+      <PlantasSection />
+
+      {/* Ubicación */}
+      <LocationSection />
+
+      {/* Footer - Contacto */}
       <ContactSection />
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/thanksyou" element={<ThanksYouPageFull />} />
+      </Routes>
+    </Router>
   );
 };
 
