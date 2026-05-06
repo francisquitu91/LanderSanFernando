@@ -47,3 +47,6 @@ Thumbs.db
 public/assets/*.mp4
 public/assets/*.mov
 public/assets/*.avi
+
+# Git LFS
+.gitattributes
