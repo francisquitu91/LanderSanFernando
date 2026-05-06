@@ -42,3 +42,8 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+
+# Large media files
+public/assets/*.mp4
+public/assets/*.mov
+public/assets/*.avi
