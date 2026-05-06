@@ -67,105 +67,129 @@ export const HeroSection: React.FC<HeroProps> = ({ content: _content }) => {
       </div>
 
       {/* Sección Hero con contenido */}
-      <section id="inicio" className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden z-10 px-4 md:px-16 py-8 md:py-0 gap-8 md:gap-0" data-form-container>
-        {/* Contenido Izquierda */}
-        <div className="flex-1 text-white max-w-lg w-full md:w-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">20 exclusivos departamentos</h1>
-          <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-white/90">Todos con vista al mar, el verano se vive en Concón</p>
-          
-          {/* Opciones de departamentos */}
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-8 mb-6 md:mb-8">
-            <div className="flex items-center gap-2">
-              <span className="text-xl md:text-2xl">🏠</span>
-              <span className="text-xs md:text-sm">3 dorm | 2 baños</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl md:text-2xl">🏠</span>
-              <span className="text-xs md:text-sm">2 dorm | 2 baños</span>
+      <section id="inicio" className="relative w-full h-screen flex flex-col md:flex-row md:items-center overflow-hidden z-10 px-4 md:px-8 lg:px-16 pt-20 md:pt-0 md:justify-between" data-form-container>
+        {/* Contenido Izquierda - Solo visible en desktop */}
+        <div className="hidden md:flex flex-1 text-white max-w-lg">
+          <div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">20 exclusivos departamentos</h1>
+            <p className="text-lg md:text-xl mb-8 text-white/90">Todos con vista al mar, el verano se vive en Concón</p>
+            
+            {/* Opciones de departamentos */}
+            <div className="flex gap-8 mb-8">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">🏠</span>
+                <span className="text-sm">3 dorm | 2 baños</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">🏠</span>
+                <span className="text-sm">2 dorm | 2 baños</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Formulario */}
-        <div className="w-full sm:max-w-sm md:max-w-md bg-white rounded-lg p-4 sm:p-6 shadow-xl md:ml-auto md:mr-8">
+        {/* Contenido mobile - Solo visible en celular, antes del formulario */}
+        <div className="md:hidden flex flex-col text-white mb-4 w-full">
+          <h2 className="text-lg font-bold mb-1">20 exclusivos departamentos</h2>
+          <p className="text-white/90 text-xs mb-3">Todos con vista al mar en Concón</p>
+          
+          {/* Opciones de departamentos - lado a lado */}
+          <div className="flex gap-4">
+            <div className="flex items-center gap-1">
+              <span className="text-xl">🏠</span>
+              <span className="text-xs font-medium">3 dorm | 2 baños</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-xl">🏠</span>
+              <span className="text-xs font-medium">2 dorm | 2 baños</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Formulario - Desktop a la derecha, Mobile a todo ancho */}
+        <div className="w-full md:max-w-sm bg-white rounded-lg p-1.5 md:p-2 shadow-xl md:ml-auto md:mr-8 md:mt-16">
           {formStep === 'initial' ? (
             <>
-              <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Ingresa tus datos para cotizar una propiedad</h2>
-              <p className="text-gray-600 text-xs sm:text-sm mb-4">Completa el formulario y nos pondremos en contacto contigo a la brevedad.</p>
+              <h2 className="hidden md:block text-base font-bold text-gray-900 mb-0.5">Ingresa tus datos para cotizar una propiedad</h2>
+              <p className="hidden md:block text-gray-600 text-xs mb-2">Completa el formulario y nos pondremos en contacto contigo a la brevedad.</p>
               
-              <form onSubmit={handleSubmit} className="space-y-3">
+              {/* Mobile */}
+              <h3 className="md:hidden text-xs font-bold text-gray-900 mb-1">Cotiza tu propiedad</h3>
+              <p className="md:hidden text-gray-600 text-xs mb-2">Completa el formulario y nos contactaremos</p>
+              
+              <form onSubmit={handleSubmit} className="space-y-1 md:space-y-1.5">
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-900 mb-1">Nombre</label>
+                  <label className="block text-xs font-medium text-gray-900 mb-0.5">Nombre</label>
                   <input
                     type="text"
                     name="nombre"
                     value={formData.nombre}
                     onChange={handleInputChange}
                     placeholder="Ej. María"
-                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-900 mb-1">Apellido</label>
+                  <label className="block text-xs font-medium text-gray-900 mb-0.5">Apellido</label>
                   <input
                     type="text"
                     name="apellido"
                     value={formData.apellido}
                     onChange={handleInputChange}
                     placeholder="Ej. González"
-                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-900 mb-1">Email</label>
+                  <label className="block text-xs font-medium text-gray-900 mb-0.5">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="maria.gonzalez@email.com"
-                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-900 mb-1">Teléfono</label>
+                  <label className="block text-xs font-medium text-gray-900 mb-0.5">Teléfono</label>
                   <input
                     type="tel"
                     name="telefono"
                     value={formData.telefono}
                     onChange={handleInputChange}
                     placeholder="+56 9 1234 5678"
-                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-900 mb-1">Rut</label>
+                  <label className="block text-xs font-medium text-gray-900 mb-0.5">Rut</label>
                   <input
                     type="text"
                     name="rut"
                     value={formData.rut}
                     onChange={handleInputChange}
                     placeholder="12.345.678-9"
-                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-900 mb-1">Renta Aproximada</label>
+                  <label className="block text-xs font-medium text-gray-900 mb-0.5">Renta Aproximada</label>
                   <select
                     name="rentaAproximada"
                     value={formData.rentaAproximada}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-2 py-1 md:px-3 md:py-1.5 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                     required
                   >
                     <option value="">Selecciona un rango</option>
@@ -177,12 +201,12 @@ export const HeroSection: React.FC<HeroProps> = ({ content: _content }) => {
 
                 <button
                   type="submit"
-                  className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2.5 text-sm sm:text-base rounded-lg transition-colors mt-4"
+                  className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-1.5 md:py-2 text-xs md:text-sm rounded-lg transition-colors mt-2"
                 >
                   Cotizar
                 </button>
 
-                <p className="text-xs text-gray-600 text-center mt-3">
+                <p className="text-xs text-gray-600 text-center mt-1.5">
                   Al enviar este formulario, aceptas ser contactado.{' '}
                   <a href="#" className="text-teal-500 hover:underline">Políticas de privacidad</a>
                 </p>

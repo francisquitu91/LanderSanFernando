@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   href={item.path}
                   onClick={(e) => handleNavClick(e, item.path)}
                   className={`
-                    block px-4 py-2 text-sm font-medium transition-all duration-200 border-b-2
+                    block px-5 py-2 text-sm font-medium transition-all duration-200 mx-1 border-b-2
                     ${activeSection === item.path.replace('#', '')
                       ? 'text-red-600 border-red-600'
                       : 'text-gray-700 hover:text-gray-900 border-transparent'
@@ -104,9 +104,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
         >
-          <div className="w-6 h-0.5 bg-gray-700 transition-all"></div>
-          <div className="w-6 h-0.5 bg-gray-700 transition-all"></div>
-          <div className="w-6 h-0.5 bg-gray-700 transition-all"></div>
+          <div className="w-6 h-0.5 bg-gray-700"></div>
+          <div className="w-6 h-0.5 bg-gray-700"></div>
+          <div className="w-6 h-0.5 bg-gray-700"></div>
         </button>
       </div>
 
